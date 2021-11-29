@@ -10,23 +10,41 @@ class GridViewWidget extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Grid view'),
         ),
-        body: GridView(
+        // body: GridView(
+        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //     crossAxisCount: 3,
+        //     crossAxisSpacing: 20,
+        //     mainAxisSpacing: 10,
+        //   ),
+        //   children: [
+        //     for (var i = 0; i < 50; i++)
+        //       Image.network('https://picsum.photos/536/354')
+        //   ],
+        //   padding: const EdgeInsets.all(10),
+        //   scrollDirection: Axis.vertical,
+        //   //physics: const NeverScrollableScrollPhysics(), // non-scrollable
+        //   // scroll effect at the end
+        //   // physics: const ClampingScrollPhysics(),
+        //   // physics: const BouncingScrollPhysics(),
+        //   shrinkWrap: true,
+        // ),
+
+        // body: GridView.count(
+        //   crossAxisCount: 3,
+        //   children: [
+        //     for (var i = 0; i < 50; i++)
+        //       Image.network('https://picsum.photos/536/354')
+        //   ],
+        // ),
+
+        body: GridView.builder(
+          itemCount: 200,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 10,
           ),
-          children: [
-            for (var i = 0; i < 50; i++)
-              Image.network('https://picsum.photos/536/354')
-          ],
-          padding: const EdgeInsets.all(10),
-          scrollDirection: Axis.vertical,
-          //physics: const NeverScrollableScrollPhysics(), // non-scrollable
-          // scroll effect at the end
-          // physics: const ClampingScrollPhysics(),
-          // physics: const BouncingScrollPhysics(),
-          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            return Image.network('https://picsum.photos/536/354');
+          },
         ),
       ),
     );
