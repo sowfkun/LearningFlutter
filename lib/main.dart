@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 // Import Widget
 import 'counter.dart';
 import 'container_widget.dart';
+import 'getx_state.dart';
 import 'wrap_widget.dart';
 import 'expanded_widget.dart';
 import 'text_widget.dart';
@@ -39,13 +40,15 @@ void main() {
   // );
 
   // run app for provider consumer exercise
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (_) => Gender()),
-      ChangeNotifierProvider(create: (_) => Degree())
-    ],
-    child: const MaterialApp(
-      home: HomePage(),
-    ),
-  ));
+  // runApp(MultiProvider(
+  //   providers: [
+  //     ChangeNotifierProvider(create: (_) => Gender()),
+  //     ChangeNotifierProvider(create: (_) => Degree())
+  //   ],
+  //   child: const MaterialApp(
+  //     home: HomePage(),
+  //   ),
+  // ));
+
+  runApp(GetX());
 }
